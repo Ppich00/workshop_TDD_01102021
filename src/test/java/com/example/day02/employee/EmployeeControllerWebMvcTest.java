@@ -26,7 +26,7 @@ public class EmployeeControllerWebMvcTest {
     @Test
     public void getById() throws Exception {
 
-        EmployeeResponse data = new EmployeeResponse(1,"XYZ");
+        EmployeeResponse data = new EmployeeResponse(1,"pichayuth");
 
         when(employeeService.get(1)).thenReturn(data);
         MvcResult mvcResult
