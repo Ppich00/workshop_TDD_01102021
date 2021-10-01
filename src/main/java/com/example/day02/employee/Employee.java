@@ -14,4 +14,14 @@ public class Employee {
     @GeneratedValue(strategy =  GenerationType.AUTO)
     private int id;
     private  String name;
+
+    public Employee(String name) {
+        this.name = name;
+    }
+
+    public Employee() {
+
+    }
+
+
 }
