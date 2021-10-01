@@ -6,8 +6,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
 class EmployeeRepositoryTest {
@@ -27,6 +26,18 @@ class EmployeeRepositoryTest {
         assertTrue(result.isPresent());
         assertEquals(1, result.get().getId());
         assertEquals("pichayuth", result.get().getName());
+
+    }
+
+    @Test
+    public void case02() {
+
+        //act
+        Optional<Employee> result = employeeRepository.findById(1);
+
+        //assert
+        assertFalse(result.isPresent());
+
 
     }
 }
