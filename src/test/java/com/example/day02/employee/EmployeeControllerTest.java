@@ -10,12 +10,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class EmployeeControllerTest {
+    @Autowired
+    private EmployeeRepository employeeRepository;
 
     @Autowired
     private TestRestTemplate restTemplate;
 
     @Test
     void getById() {
+        Employee demo = new Employee("pichayuth");
+        employeeRepository.save(demo);
 
         EmployeeResponse result = restTemplate.getForObject("/employee/1", EmployeeResponse.class);
 
