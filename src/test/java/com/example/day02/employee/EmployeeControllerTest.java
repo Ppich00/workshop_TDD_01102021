@@ -15,12 +15,12 @@ class EmployeeControllerTest {
     private TestRestTemplate restTemplate;
 
     @Test
-    void getById(){
+    void getById() {
 
-        EmployeeResponse result = restTemplate.getForObject("/employee/1",EmployeeResponse.class);
+        EmployeeResponse result = restTemplate.getForObject("/employee/1", EmployeeResponse.class);
 
-        assertEquals(1,result.getId());
-        assertEquals("pichayuth",result.getName());
+        assertEquals(1, result.getId());
+        assertEquals("pichayuth", result.getName());
     }
 
 }
